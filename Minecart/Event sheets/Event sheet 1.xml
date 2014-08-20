@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <include>Minecart</include>
+        <include>Enemies</include>
+        <include>Player Controls</include>
+        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
+        <comment>If the player falls off the bottom of the layout, restart the level.</comment>
+        <event-block disabled="1" sid="7561294557194817">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8799591973981914" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="9051279204508429" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="0" name="Play" sid="3399434749940572" type="Audio">
+                    <param id="0" name="Audio file">Submerged</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1880108684372833">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5665670359107255" type="System" />
+                <condition id="-8" name="Compare two values" sid="8413630857361999" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="9659586353920626" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Background 1&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5193825903928575">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="306219037566911" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7438841430997487" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Background 2&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2154790021394734">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2797818522859549" type="System" />
+                <condition id="-8" name="Compare two values" sid="6038750568082205" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="107167600292828" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Background 3&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2161657717191324">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6427336383782531" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6528758879417862" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Background 4&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6234141278026077">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3050869220937129" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2152796695487089" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Background 5&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6696308771358021">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="1034417564721744" type="Rain">
+                    <param id="0" name="Layer">&quot;Background 1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="9165487677082013" type="Rain">
+                    <param id="0" name="Width">32</param>
+                    <param id="1" name="Height">32</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="5155516535409201" type="Rain">
+                    <param id="0" name="Gravity">5000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5436467224582516">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="3210222283759563" type="Rain">
+                    <param id="0" name="Layer">&quot;Background 2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="1184087733649667" type="Rain">
+                    <param id="0" name="Width">34</param>
+                    <param id="1" name="Height">34</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="7120303783527796" type="Rain">
+                    <param id="0" name="Gravity">5800</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1267805989338465">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="3948254334748364" type="Rain">
+                    <param id="0" name="Layer">&quot;Background 3&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="5416631586076371" type="Rain">
+                    <param id="0" name="Width">36</param>
+                    <param id="1" name="Height">36</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="2802664147830901" type="Rain">
+                    <param id="0" name="Gravity">6700</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9534990634554468">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="3761380716060282" type="Rain">
+                    <param id="0" name="Layer">&quot;Background 4&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="4757381331968039" type="Rain">
+                    <param id="0" name="Width">38</param>
+                    <param id="1" name="Height">38</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="7409381542538712" type="Rain">
+                    <param id="0" name="Gravity">7100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9032712586544958">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="6453646853743384" type="Rain">
+                    <param id="0" name="Layer">&quot;Background 5&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="4719268386101864" type="Rain">
+                    <param id="0" name="Width">40</param>
+                    <param id="1" name="Height">40</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="7955752651446534" type="Rain">
+                    <param id="0" name="Gravity">7600</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="410477400426112">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="1122451169137675" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2138505400093381" type="Rain">
+                    <param id="0" name="Animation">&quot;Slow&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1225814824633941">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="4917241117202962" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="6178871730233872" type="Rain">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6572239721623776">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1338278132795414" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3479238240318413" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8783411580746376">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6705037637853519" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6613748113051074" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5952983429424258">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="275032515214589" type="System" />
+                <condition id="-8" name="Compare two values" sid="6011115714161478" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1115250081299026" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9300950492281452">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="581214433893189" type="System" />
+                <condition id="-8" name="Compare two values" sid="956165634402511" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="7372835546955421" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9534586414387886">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4346319449257447" type="System" />
+                <condition id="-8" name="Compare two values" sid="3081317022958083" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="820974856722978" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3060383641847723">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5870527721258512" type="System" />
+                <condition id="-8" name="Compare two values" sid="3111977701864761" type="System">
+                    <param id="0" name="First value">timescale</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2692584205623479" type="System">
+                    <param id="0" name="Object to create">Rain</param>
+                    <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                    <param id="2" name="X">random(Player.X-400,Player.X+3750)</param>
+                    <param id="3" name="Y">Player.Y - 2000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3463344806984542">
+            <conditions>
+                <condition id="-16" name="Is on layer" sid="9153005175465029" type="Rain">
+                    <param id="0" name="Layer">&quot;Game Layer&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1560262133190397">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5686135162418154" type="Rain">
+                            <param id="0" name="Object">Ground</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="9149290080408302" type="Rain">
+                            <param id="0" name="Object">splash</param>
+                            <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="531677459419892" type="splash">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5801908192973367" type="Rain" />
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="728730955821496">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3548258603796313" type="Rain">
+                            <param id="0" name="Object">JumpThruTile</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="5853588162269621" type="Rain">
+                            <param id="0" name="Object">splash</param>
+                            <param id="1" name="Layer">&quot;Game Layer&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1414649670801307" type="splash">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2826121910447051" type="Rain" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="715291719427025">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="373322140935592" type="splash" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="682227094661251" type="splash" />
+            </actions>
+        </event-block>
+        <event-block sid="656496748027414">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="6558638152809149" type="splash" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6336399843959465" type="splash" />
+            </actions>
+        </event-block>
+        <event-block sid="4376006297172789">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="7548820135397483" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="3127061815779293" type="System">
+                    <param id="0" name="Time scale">0.25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5346993349481036">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="1528051172160203" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="4500121365751868" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8574479990208096">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="2447014866125994" type="Rain">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">10000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3868700182112025" type="Rain" />
+            </actions>
+        </event-block>
+        <event-block sid="986866190549387">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3695084335976463" type="System" />
+                <condition id="-11" name="For Each" sid="9804655279321778" type="System">
+                    <param id="0" name="Object">Slug</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="5901987957700687" type="Slug">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4781912424339804">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7358972960209829" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="7466071317269111" type="Sprite2">
+                    <param id="0" name="Gravity">10</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

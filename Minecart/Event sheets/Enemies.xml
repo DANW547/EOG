@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Enemies</name>
+    <events>
+        <event-group collapsed="1" description="" sid="4961839717354067" title="Slime">
+            <sub-events>
+                <event-block sid="643359609385885">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="8587883845132706" type="Slime">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="5550456413354898" type="Slime" />
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="5842224963990233" type="Slime">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="9805920435058822" type="Slime">
+                            <param id="0" name="Vector Y">-1250</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6263163085721841">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="5032158651142793" type="Slime" />
+                        <condition id="-8" name="Compare two values" sid="8160159268783559" type="System">
+                            <param id="0" name="First value">player.X</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">slime.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="689711199478042" type="Slime">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6140096225965765" type="Slime">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6226513185865803">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="7726759902234265" type="Slime" />
+                        <condition id="-8" name="Compare two values" sid="1914573347766072" type="System">
+                            <param id="0" name="First value">player.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">slime.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="7238005131086442" type="Slime">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6904518879043711" type="Slime">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5112074590904882">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="6409661618753251" type="Slime">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="2023418874245236" type="Slime">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="4764006414895176" type="Slime" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="119040043330264" type="Slime">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9159819521183553">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="7635796988733733" type="Slime">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">8</param>
+                        </condition>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="8177395768371008" type="Slime" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="3136373778801383" type="Slime" />
+                    </actions>
+                </event-block>
+                <event-block sid="9312663188157521">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="2628289037382947" type="Slime" />
+                        <condition id="3" name="Compare frame" sid="424392709301505" type="Slime">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Start" sid="3707919892468615" type="Slime">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3778034586093531" title="Slug">
+            <sub-events>
+                <event-block sid="4126155617531079">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="2669996731209294" type="Slug" />
+                        <condition id="-5" name="Compare width" sid="7292968492981029" type="Slug">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">180</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="9910243376703097" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="5432051404952222" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="611270063936323" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="3836943680713624" type="Slug">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5796523529470537">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="175744781093336" type="Slug" />
+                        <condition id="-5" name="Compare width" sid="2864455692052661" type="Slug">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">180</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="593544054364575" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="1925358671907059" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9330990810083444" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="1577213360734091" type="Slug">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9121461316611787">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4504218347393797" type="Slug">
+                            <param id="0" name="Object">ReverseMovementLeft</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="6194911900569934" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3311450771267163" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="2811253916421414" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3604108444194116">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="554473240990011" type="Slug">
+                            <param id="0" name="Object">ReverseMovementRight</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="2870894876484164" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1663443240006611" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="7034675389846567" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9146829359995583">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5288365394656181" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="9985803232865748" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="1496961253208142" type="Slug">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">400*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9419029974094189">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2419502563338105" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="5192994820706942" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="4562334919642784" type="Slug">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">-400*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="114412252121667">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="3588014276157534" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="1633400179657005" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="8389191783423207" type="Slug" />
+                        <condition id="-21" name="Is between values" sid="2018715885337071" type="System">
+                            <param id="0" name="Value">Player.X</param>
+                            <param id="1" name="Lower bound">Slug.X-150</param>
+                            <param id="2" name="Upper bound">Slug.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2351063287470423" type="Slug">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="2695432946181915" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="AttackMotion" id="0" name="Set active" sid="4804198452979596" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6986540772645627">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="9236721356448702" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="5423825809706727" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="2523891346335957" type="Slug" />
+                        <condition id="-21" name="Is between values" sid="4124567621186669" type="System">
+                            <param id="0" name="Value">Player.X</param>
+                            <param id="1" name="Lower bound">Slug.X+1</param>
+                            <param id="2" name="Upper bound">Slug.X+150</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6780557789926231" type="Slug">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="6193640192372377" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="AttackMotion" id="0" name="Set active" sid="189215157405277" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8176819204184331">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="2702775465022683" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="932171148627871" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="26565339978167" type="Slug" />
+                        <condition id="-21" inverted="1" name="Is between values" sid="7441702356457108" type="System">
+                            <param id="0" name="Value">Player.X</param>
+                            <param id="1" name="Lower bound">Slug.X-150</param>
+                            <param id="2" name="Upper bound">Slug.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2456186666347324" type="Slug">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="AttackMotion" id="0" name="Set active" sid="7190360611148618" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="85633446980757" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6491417788949056">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="8558166330865764" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="7245305126531832" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="6676379879753845" type="Slug" />
+                        <condition id="-21" inverted="1" name="Is between values" sid="4494211636095428" type="System">
+                            <param id="0" name="Value">Player.X</param>
+                            <param id="1" name="Lower bound">Slug.X+1</param>
+                            <param id="2" name="Upper bound">Slug.X+150</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6395353105728927" type="Slug">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="AttackMotion" id="0" name="Set active" sid="2586118966338353" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="4143428285040724" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6149174951114449">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="8795861691902121" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="-5" name="Compare width" sid="6920209958704202" type="Slug">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">180</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1489672078037973" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="9105153854401003" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="CustomMovement" id="12" name="Set enabled" sid="3601996715307845" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="1683949945802723" type="Slug">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">-400*dt</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="2702168578060925" type="Slug">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4245856633506576">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="3905802998240109" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="-5" name="Compare width" sid="569163108586277" type="Slug">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Width">180</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="7800156369927671" type="Slug">
+                            <param id="0" name="Instance variable">Reverse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="729491835610387" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="CustomMovement" id="12" name="Set enabled" sid="1728661433458169" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="6150505736991967" type="Slug">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">400*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4265213563526586">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="1228520811907825" type="System">
+                            <param id="0" name="Object">Slug</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="5111857454119826" type="Slug">
+                            <param id="0" name="Animation">&quot;CeilingClimb&quot;</param>
+                        </condition>
+                        <condition id="-21" name="Is between values" sid="9571695282988186" type="System">
+                            <param id="0" name="Value">Player.X</param>
+                            <param id="1" name="Lower bound">Slug.X-150</param>
+                            <param id="2" name="Upper bound">Slug.X+150</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="5770443801299652" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="CustomMovement" id="12" name="Set enabled" sid="8150463352803933" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="1387036506476495" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="AttackMotion" id="0" name="Set active" sid="7730093298318893" type="Slug">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8575734556788161" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3830854147674665">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="9778610363444992" type="Slug" />
+                        <condition id="2" name="Is playing" sid="5249326234538907" type="Slug">
+                            <param id="0" name="Animation">&quot;Drop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="StandardMovement" id="0" name="Set active" sid="7848132574436649" type="Slug">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2953311613102326" type="Slug">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="325547305265652">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2400439865251538" type="Slug">
+                            <param id="0" name="Object">ThrowingKnife</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="396459345319424" type="Slug" />
+                        <action id="0" name="Spawn another object" sid="961236389459938" type="Slug">
+                            <param id="0" name="Object">Slug</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="" sid="1085888620490374" title="Bat">
+            <sub-events>
+                <event-block sid="9166094238434575">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1244555172968972" type="BatTrigger">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="7197860132573556" type="Bat">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="9700035213611713" type="Bat">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="CustomMovement" id="3" name="Accelerate" sid="829070356364162" type="Bat">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Acceleration">random(500,750)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="6620785861372375" type="Bat">
+                            <param id="0" name="Animation">&quot;Fly&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="8587761879907148" type="Bat">
+                            <param id="0" name="Frame number">random(0,10)</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="618789416490948" type="Bat">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">random(1200,1600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Dan&apos;s Shit" sid="4832032947387329" title="Generic Enemy">
+            <sub-events>
+                <event-block sid="3274979861953435">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="5494040831102461" type="Sprite">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Offset X">5</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="2464266220987876" type="Sprite">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4287410226293545">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="1123229414769378" type="Sprite">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Offset X">-25</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4417191935912527" type="Sprite">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5580902420645278">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="5572629418607538">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="4060423390480226" type="Sprite">
+                            <param id="0" name="Object">Slug</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">-5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2953990079745676" type="Slug" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

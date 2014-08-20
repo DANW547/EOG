@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Minecart</name>
+    <events>
+        <event-group description="Dan&apos;s Shit" sid="4897637661975168" title="Mine Cart">
+            <sub-events>
+                <event-block sid="2922035106060548">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8796137904905192" type="Player">
+                            <param id="0" name="Instance variable">InMinecart</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="6175025403078281" type="Sprite2">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4729478993373024">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6066885928592887" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3740889935769851" type="MinecartAcceleration">
+                    <param id="0" name="Text">Player.InMinecart</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4539046742387514">
+            <conditions>
+                <condition id="-18" name="On created" sid="3756565804491595" type="MinecartAcceleration" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="4511387030928635" type="MinecartAcceleration">
+                    <param id="0" name="Pin to">Sprite2</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3268606708164256">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9360732144002879" type="Player">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+                <condition behavior="Platform" id="4" name="Is falling" sid="7092246014288377" type="Player" />
+                <condition id="-21" name="Is between values" sid="8843862934798616" type="System">
+                    <param id="0" name="Value">Player.X</param>
+                    <param id="1" name="Lower bound">Sprite2.X-100</param>
+                    <param id="2" name="Upper bound">Sprite2.X+100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="4746878831067518" type="Player">
+                    <param id="0" name="Instance variable">InMinecart</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3805878120804164">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="4196625200469405" type="Player">
+                    <param id="0" name="Instance variable">InMinecart</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="5031366782186649" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="5888736398292358" type="Player">
+                    <param id="0" name="Instance variable">DoubleJump</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="5499378465919497" type="Player">
+                    <param id="0" name="Object">Sprite2</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5311327162410484">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="5545328181045094" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3358060393627713" type="Player">
+                    <param id="0" name="Instance variable">InMinecart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="5865444230434774" type="Player">
+                    <param id="0" name="Vector Y">-1800</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="4263291503789824" type="Player">
+                    <param id="0" name="Max Speed">1000</param>
+                </action>
+                <action behavior="Platform" id="8" name="Set vector X" sid="4063151061447555" type="Player">
+                    <param id="0" name="Vector X">Sprite2.Physics.VelocityX</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="211725818368958" type="Player">
+                    <param id="0" name="Instance variable">InMinecart</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

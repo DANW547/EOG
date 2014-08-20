@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Tortoise Text</name>
+    <events>
+        <event-block sid="7082504369910548">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="7125899621500325">
+            <conditions />
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
